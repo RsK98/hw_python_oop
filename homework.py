@@ -68,8 +68,9 @@ class Running(Training):
         super().__init__(action, duration, weight)
 
     def get_spent_calories(self):
-        calories = (self.cf_calorie_1 * self.get_mean_speed() - self.cf_calorie_2) * \
-                   self.weight / self.M_IN_KM * (self.cf_min * self.duration)
+        calories = (self.cf_calorie_1 * self.get_mean_speed() -
+                    self.cf_calorie_2) * self.weight / self.M_IN_KM * \
+                   (self.cf_min * self.duration)
         return calories
 
 
@@ -84,8 +85,9 @@ class SportsWalking(Training):
         cf_calorie_3 = 0.035
         cf_calorie_4 = 0.029
         coeff_min = 60
-        calories = (cf_calorie_3 * self.weight + (self.get_mean_speed() ** 2 // self.height)
-                    * cf_calorie_4 * self.weight) * coeff_min * self.duration
+        calories = (cf_calorie_3 * self.weight +
+                    (self.get_mean_speed() ** 2 // self.height)* cf_calorie_4
+                    * self.weight) * coeff_min * self.duration
         return calories
 
 
@@ -100,7 +102,8 @@ class Swimming(Training):
 
     def get_mean_speed(self) -> float:
         """Получить среднюю скорость движения."""
-        speed = (self.length_pool * self.count_pool / self.M_IN_KM / self.duration)
+        speed = (self.length_pool * self.count_pool /
+                 self.M_IN_KM / self.duration)
         return speed
 
     def get_spent_calories(self):
