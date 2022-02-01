@@ -86,8 +86,8 @@ class SportsWalking(Training):
         cf_calorie_4 = 0.029
         coeff_min = 60
         calories = (cf_calorie_3 * self.weight
-                    + (self.get_mean_speed() ** 2 // self.height)* cf_calorie_4
-                    * self.weight) * coeff_min * self.duration
+                    + (self.get_mean_speed() ** 2 // self.height)
+                    * cf_calorie_4 * self.weight) * coeff_min * self.duration
         return calories
 
 
