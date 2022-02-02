@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 @dataclass
 class InfoMessage:
     """Информационное сообщение о тренировке."""
@@ -23,6 +24,7 @@ class InfoMessage:
                 f'Дистанция: {self.distance:.3f} км; '
                 f'Ср. скорость: {self.speed:.3f} км/ч; '
                 f'Потрачено ккал: {self.calories:.3f}.')
+
 
 @dataclass
 class Training:
@@ -57,6 +59,7 @@ class Training:
                               self.get_spent_calories())
         return message
 
+
 @dataclass
 class Running(Training):
     """Тренировка: бег."""
@@ -70,6 +73,7 @@ class Running(Training):
                                                  * (self.CF_MIN
                                                     * self.duration))
         return calories
+
 
 @dataclass
 class SportsWalking(Training):
@@ -86,6 +90,7 @@ class SportsWalking(Training):
                     * self.CF_CALORIES_WLK_4 * self.weight)
                     * (self.CF_MIN * self.duration))
         return calories
+
 
 @dataclass
 class Swimming(Training):
