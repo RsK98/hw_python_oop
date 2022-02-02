@@ -64,10 +64,9 @@ class Running(Training):
     CF_MIN = 60
 
     def get_spent_calories(self):
-        calories = (self.CF_CALORIES_RUN_1 * self.get_mean_speed()
-                    - self.CF_CALORIES_RUN_2) * (self.weight / self.M_IN_KM
-                                                 * (self.CF_MIN
-                                                    * self.duration))
+        calories = ((((self.CF_CALORIES_RUN_1 * self.get_mean_speed()
+                    - self.CF_CALORIES_RUN_2) * self.weight / self.M_IN_KM))
+                    * (self.CF_MIN * self.duration))
         return calories
 
 
