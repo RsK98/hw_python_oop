@@ -118,11 +118,11 @@ def read_package(workout_type: str, data: list) -> Training:
     if workout_type in dict:
         call_class = dict[workout_type]
         if call_class == Swimming:
-            return Swimming(data[0], data[1], data[2], data[3], data[4])
+            return Swimming(*data)
         elif call_class == Running:
-            return Running(data[0], data[1], data[2])
+            return Running(*data)
         elif call_class == SportsWalking:
-            return SportsWalking(data[0], data[1], data[2], data[3])
+            return SportsWalking(*data)
 
 
 def main(training: Training) -> None:
